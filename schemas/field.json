@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/ideditor/schema-builder/raw/main/schemas/field.json",
+    "$id": "https://github.com/k-yle/schema-builder/raw/kyle-deploy/schemas/field.json",
     "title": "Field",
     "description": "A reusable form element for presets",
     "type": "object",
@@ -92,8 +92,7 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "enum": ["point", "vertex", "line", "area", "relation"]
+              "$ref": "#/$defs/Geometry"
             }
         },
         "default": {
@@ -294,5 +293,11 @@
                 { "required": ["keys"] }
             ]}
         ]}
-    ]
+    ],
+    "$defs": {
+        "Geometry": {
+            "type": "string",
+            "enum": ["point", "vertex", "line", "area", "relation"]
+        }
+    }
 }
